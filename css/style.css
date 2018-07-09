@@ -1,0 +1,402 @@
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #222;
+  font-size: 1.6em;
+  font-family: monospace;
+}
+
+body * {
+  font-family: monospace;
+}
+
+h1, h2 {
+  font-weight: 700;
+  font-family: monospace;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-family: monospace;
+}
+
+/* SOUND */
+.sound a {
+  display: inline-block;
+  position: absolute;
+  top: .5em;
+  left: -.1em;
+  z-index: 9999;
+/*
+  -webkit-transition: .3s all;
+          transition: .3s all;
+*/
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+}
+.sound a svg {
+  height: 3.25em;
+}
+.sound a:hover {
+  -webkit-transform: rotate(10deg) scale(1.05);
+          transform: rotate(10deg) scale(1.05);
+}
+
+/* HEADER */
+.header-wrap {
+  height: 100vh;
+}
+
+.video-bg {
+  overflow: hidden;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.video-bg video {
+  display: none;
+  opacity: .7;
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+header #logo {
+  width: 24em;
+  margin-top: 1.5em;
+  -webkit-animation: load-spin 2.25s ease-out 0s 1;
+          animation: load-spin 2.25s ease-out 0s 1;
+}
+header .slogan {
+  text-align: center;
+  color: #fff;
+}
+header .slogan h2 {
+  opacity: 0;
+  -webkit-animation: load-popup 2.25s ease-out 3s 1 forwards;
+          animation: load-popup 2.25s ease-out 3s 1 forwards;
+}
+header .slogan h2:first-child {
+  margin-bottom: .5em;
+  -webkit-animation: load-popup 2.25s ease-out 2s 1 forwards;
+          animation: load-popup 2.25s ease-out 2s 1 forwards;
+}
+
+.typewriter h1 {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30) 4s 1 normal both,
+    blink-caret .5s step-end infinite;
+}
+
+@media screen and (min-width: 768px) {
+  .header-wrap {
+    height: 768px;
+    width: 100%;
+  }
+
+  .video-bg {
+    height: auto;
+    width: 100vw;
+    overflow: hidden;
+  }
+  .video-bg video {
+    display: block;
+    width: 1280px   !important;
+    height: auto   !important;
+  }
+    
+  header {
+    height: 100%;
+  }
+  header #logo {
+    width: 28em;
+    margin-top: 7.75em;
+  }
+  header .slogan {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+            justify-content: space-around;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+  }
+  header .slogan h2 {
+    padding-bottom: 8em;
+  }
+  header .slogan h2:first-child {
+    margin-bottom: 0;
+    padding-right: 15em;
+  }
+  header h1 {
+    font-size: 36px;
+    font-size: 3.6rem;
+    margin-bottom: .75em;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header-wrap {
+    height: 100vh;
+  }
+
+  .video-bg {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  .video-bg video {
+    display: block;
+    width: 100%  !important;
+    height: auto   !important;
+  }
+
+  header {
+    height: 100%;
+  }
+  header #logo {
+    width: 32em;
+    margin-top: 3em;
+    padding-top: 3em;
+  }
+  header .slogan {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+            align-items: flex-start;
+  }
+  header .slogan h2 {
+    padding-bottom: 0;
+    padding-top: 10.25em;
+    font-size: 28px;
+    font-size: 2.8rem;
+  }
+  header .slogan h2:first-child {
+    margin-bottom: 0;
+  }
+  header h1 {
+    font-size: 42px;
+    font-size: 4.2rem;
+    margin-bottom: .75em;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .video-bg video {
+    width: 100%   !important;
+    height: auto   !important;
+  }
+}
+
+/* ANIMATIONS */
+@-webkit-keyframes load-spin {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: rotate(180deg) scale(0.8);
+            transform: rotate(180deg) scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
+  }
+}
+@keyframes load-spin {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: rotate(180deg) scale(0.8);
+            transform: rotate(180deg) scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
+  }
+}
+
+@-webkit-keyframes load-popup {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes load-popup {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  
+  to {
+    width: 100%; 
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { 
+    border-color: transparent; 
+  }
+  
+  50% { 
+    border-color: orange; 
+  }
+}
+
+/*
+@-webkit-keyframes load-scale {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+
+  80% {
+    opacity: 1;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+
+  95% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes load-scale {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+
+  80% {
+    opacity: 1;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+
+  95% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes bop {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes bop {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}*/

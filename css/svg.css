@@ -1,0 +1,40 @@
+#mic-whole {
+  cursor: pointer;
+}
+#mic-whole #inner-wave {
+  stroke-width: 6;
+  -webkit-animation: waveform 2s linear 0s infinite alternate;
+          animation: waveform 2s linear 0s infinite alternate;
+}
+#mic-whole #middle-wave {
+  stroke-width: 8;
+  -webkit-animation: waveform 2s linear 1.5s infinite alternate;
+          animation: waveform 2s linear 1.5s infinite alternate;
+}
+#mic-whole #outer-wave {
+  stroke-width: 10;
+  -webkit-animation: waveform 2s linear 3s infinite alternate;
+          animation: waveform 2s linear 3s infinite alternate;
+}
+#mic-whole #mute {
+  display: none;
+}
+
+@-webkit-keyframes waveform {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes waveform {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
